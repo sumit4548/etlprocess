@@ -31,7 +31,7 @@ public class DecompressTaskletTest {
 	@Test public void execute() throws Exception {
 		DecompressTasklet tasklet = new DecompressTasklet();
 		tasklet.setInputResource(new ClassPathResource("/input/products.zip"));
-		File outputDir = new File("./target/decompresstasklet");
+		File outputDir = new File("/Users/sumitagrawal/git/etlprocess/etlprocess/target/decompresstasklet");
 		if(outputDir.exists()) {
 			FileUtils.deleteDirectory(outputDir);
 		}
@@ -59,7 +59,7 @@ public class DecompressTaskletTest {
 		
 		try {
 			tasklet.execute(null, null);
-			Assert.fail("corrupted archive, the tasklet should have thrown an exception");
+			Assert.fail("corrupted archive,the tasklet should have thrown an exception");
 		} catch (Exception e) {
 			// OK
 		}
